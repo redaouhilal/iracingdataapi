@@ -1,7 +1,8 @@
 import setuptools
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+from pathlib import Path
+readme = Path("README.md")
+long_description = readme.read_text(encoding="utf-8") if readme.exists() else ""
 
 setuptools.setup(
     name="iracingdataapi",
